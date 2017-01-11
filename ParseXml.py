@@ -14,7 +14,7 @@ class ParseXml():
 			
 	def openUrl(self):
 		#open url with xml file
-		url = urllib.urlopen('http://www.aemet.es/xml/municipios/localidad_18087.xml') 
+		url = urllib.urlopen('http://www.aemet.es/xml/municipios/localidad_18127.xml') 
 		global doc
 		doc = minidom.parse(url)
 		#get data in variables
@@ -29,7 +29,7 @@ class ParseXml():
 	def getUrl(self):
 		return enlace.firstChild.data
 	#get all attributes from each day tag in XML file
-	def getAttributes(self):
+	def printAttributes(self):
 		for dia in etiquetaDia:
 			#get attributes from each day tag (fecha,probabilidad prec, temp max, temp min)
 			date = dia.getAttribute("fecha")	
