@@ -1,4 +1,5 @@
-# Parsing xml file AEMET Python | Leyendo fichero XML de AEMET Python
+# [ES]Leyendo fichero XML de AEMET Python
+# [EN]Parsing xml file AEMET Python
 Obteniendo datos meteorológicos de municipios archivo xml de AEMET con Python PDO   | get weather for town from xml file AEMET write in Python
 
 # [ES]
