@@ -12,3 +12,5 @@ Getting data from xml file from AEMET (http://www.aemet.es/es/eltiempo/prediccio
 all code has been written in Python
 
 ## Application still developing
+images capture | captura de pantalla
+![alt tag](https://cloud.githubusercontent.com/assets/8844134/21848425/eca6eb24-d800-11e6-8f8a-a8790d059f01.png)
