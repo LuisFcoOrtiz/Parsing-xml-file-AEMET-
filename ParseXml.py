@@ -14,7 +14,7 @@ class ParseXml():
 			
 	def openUrl(self):
 		#open url with xml file
-		url = urllib.urlopen('http://www.aemet.es/xml/municipios/localidad_18127.xml') 
+		url = urllib.urlopen('http://www.aemet.es/xml/municipios/localidad_18087.xml') 
 		global doc
 		doc = minidom.parse(url)
 		#get data in variables
