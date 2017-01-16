@@ -39,6 +39,7 @@ class ParseXml():
 			try:
 				print("\nfecha: %s | prob general lluvia: %s | temp Max:%s | temp Min:%s" % (date, probPrecip.firstChild.data, tempMax.firstChild.data, tempMin.firstChild.data))				
 			except:
-				pass
+				pass	
+	
 #End class	
 			
