@@ -11,10 +11,15 @@ from xml.dom import minidom
 import urllib
 
 class ParseXml():
-			
+	
+	
+	def setUrl(self, urlEntry=''):
+		global xmlFileFromUrl 
+		xmlFileFromUrl = urlEntry
+		
 	def openUrl(self):
 		#open url with xml file
-		url = urllib.urlopen('http://www.aemet.es/xml/municipios/localidad_18087.xml') 
+		url = urllib.urlopen(xmlFileFromUrl) 
 		global doc
 		doc = minidom.parse(url)
 		#get data in variables
@@ -24,10 +29,13 @@ class ParseXml():
 		enlace = doc.getElementsByTagName("enlace")[0]
 		global etiquetaDia
 		etiquetaDia = doc.getElementsByTagName("dia")
+		
 	def getName(self):
 		return name.firstChild.data
+		
 	def getUrl(self):
 		return enlace.firstChild.data
+		
 	#get all attributes from each day tag in XML file
 	def printAttributes(self):
 		for dia in etiquetaDia:

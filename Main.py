@@ -8,6 +8,7 @@
 import ParseXml
 
 prueba = ParseXml.ParseXml()
+prueba.setUrl("http://www.aemet.es/xml/municipios/localidad_18127.xml")
 prueba.openUrl()
 print prueba.getName()
 print prueba.getUrl()
