@@ -9,9 +9,17 @@
 # 
 from xml.dom import minidom
 import urllib
-
+import os
 class ParseXml():
 	
+	def checkConnection(self):
+		hostname = "8.8.8.8"
+		response = os.system("ping -q -c 1 " + hostname)
+		#and then check the response...
+		if response == 0:
+		  return True
+		else:
+		  return False
 	
 	def setUrl(self, urlEntry=''):
 		global xmlFileFromUrl 
