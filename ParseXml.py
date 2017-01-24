@@ -12,9 +12,10 @@ import urllib
 import os
 class ParseXml():
 	
+	#Check if network connection is possible
 	def checkConnection(self):
 		hostname = "8.8.8.8"
-		response = os.system("ping -q -c 1 " + hostname)
+		response = os.system("ping -q -c 1 " + hostname + " > /dev/null")
 		#and then check the response...
 		if response == 0:
 		  return True
