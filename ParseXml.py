@@ -18,9 +18,9 @@ class ParseXml():
 		response = os.system("ping -q -c 1 " + hostname + " > /dev/null")
 		#and then check the response...
 		if response == 0:
-		  return True
+		  return True		#network connect is ok
 		else:
-		  return False
+		  return False		#network connect is unracheable
 	
 	def setUrl(self, urlEntry=''):
 		global xmlFileFromUrl 
@@ -47,16 +47,23 @@ class ParseXml():
 		
 	#get all attributes from each day tag in XML file
 	def printAttributes(self):
-		for dia in etiquetaDia:
+		lista=[]		
+		for dia in etiquetaDia:			
 			#get attributes from each day tag (fecha,probabilidad prec, temp max, temp min)
 			date = dia.getAttribute("fecha")	
 			probPrecip = dia.getElementsByTagName("prob_precipitacion")[0]
 			tempMax = dia.getElementsByTagName("maxima")[0]
 			tempMin = dia.getElementsByTagName("minima")[0]
-			try:
+			try:				
+				fecha = date
+				probabilidad = probPrecip.firstChild.data
+				maxima = tempMax.firstChild.data
+				minima = tempMin.firstChild.data
+				lista += [fecha,probabilidad,maxima,minima]
+				
 				print("\nfecha: %s | prob general lluvia: %s | temp Max:%s | temp Min:%s" % (date, probPrecip.firstChild.data, tempMax.firstChild.data, tempMin.firstChild.data))				
 			except:
 				pass	
-	
+		return lista
 #End class	
 			
