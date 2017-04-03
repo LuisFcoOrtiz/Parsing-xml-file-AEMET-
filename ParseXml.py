@@ -44,11 +44,11 @@ class ParseXml():
 		
 	def getUrl(self):
 		return enlace.firstChild.data
-		
+				
 	#get all attributes from each day tag in XML file
-	def printAttributes(self):
-		lista=[]		
-		for dia in etiquetaDia:			
+	def printAttributes(self):		
+		lista=[]	#list				
+		for dia in etiquetaDia:					
 			#get attributes from each day tag (fecha,probabilidad prec, temp max, temp min)
 			date = dia.getAttribute("fecha")	
 			probPrecip = dia.getElementsByTagName("prob_precipitacion")[0]
@@ -59,11 +59,9 @@ class ParseXml():
 				probabilidad = probPrecip.firstChild.data
 				maxima = tempMax.firstChild.data
 				minima = tempMin.firstChild.data
-				lista += [fecha,probabilidad,maxima,minima]
-				
 				print("\nfecha: %s | prob general lluvia: %s | temp Max:%s | temp Min:%s" % (date, probPrecip.firstChild.data, tempMax.firstChild.data, tempMin.firstChild.data))				
 			except:
-				pass	
-		return lista
+				pass									
+		#return lista [:float(position)]	
 #End class	
 			
