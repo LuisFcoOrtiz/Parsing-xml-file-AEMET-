@@ -16,5 +16,7 @@ all code has been written in Python
 images capture | captura de pantalla
 (first capture)
 ![alt tag](https://cloud.githubusercontent.com/assets/8844134/21848425/eca6eb24-d800-11e6-8f8a-a8790d059f01.png)
+
 (new update 2017-04-03)
+
 ![alt tag](https://cloud.githubusercontent.com/assets/8844134/24616350/288b3e44-1891-11e7-9f86-946691be7956.png)
