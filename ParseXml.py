@@ -61,24 +61,29 @@ class ParseXml():
 				print("\nfecha: %s | prob general lluvia: %s | temp Max:%s | temp Min:%s" % (date, probPrecip.firstChild.data, tempMax.firstChild.data, tempMin.firstChild.data))				
 			except:
 				pass									
-		
-	def LookForADay (self, day=''):
+	
+	#Get all dates
+	def getAllDates (self):
+		print("Fechas posibles")
 		for dia in etiquetaDia:					
-			#get attributes from each day tag (fecha,probabilidad prec, temp max, temp min)
+			date = dia.getAttribute("fecha")			
+			print("| %s |" % (date))
+			
+			
+	def LookForADay (self, day=''):		
+		for dia in etiquetaDia:					
+			#get one day in especific, entry by argument
 			date = dia.getAttribute("fecha")	
 			probPrecip = dia.getElementsByTagName("prob_precipitacion")[0]
 			tempMax = dia.getElementsByTagName("maxima")[0]
-			tempMin = dia.getElementsByTagName("minima")[0]
+			tempMin = dia.getElementsByTagName("minima")[0]			
 			try:				
 				fecha = date
 				probabilidad = probPrecip.firstChild.data
 				maxima = tempMax.firstChild.data
 				minima = tempMin.firstChild.data
 				if (fecha==day):
-					print("\nfecha: %s | prob general lluvia: %s | temp Max:%s | temp Min:%s" % (date, probPrecip.firstChild.data, tempMax.firstChild.data, tempMin.firstChild.data))
-				else:
-					print("naica")				
-				#print("\nfecha: %s | prob general lluvia: %s | temp Max:%s | temp Min:%s" % (date, probPrecip.firstChild.data, tempMax.firstChild.data, tempMin.firstChild.data))				
+					print("\nfecha: %s | prob general lluvia: %s | temp Max: %s grados | temp Min: %s grados" % (date, probPrecip.firstChild.data, tempMax.firstChild.data, tempMin.firstChild.data))													
 			except:
 				pass
 #End class	

@@ -11,10 +11,11 @@ prueba = ParseXml.ParseXml()
 prueba.setUrl("http://www.aemet.es/xml/municipios/localidad_18127.xml")
 prueba.openUrl()	
 if (prueba.checkConnection()==True):	
-#trying to create a graphic interface with python	
 	print(prueba.getName())
 	print(prueba.getUrl())
-	#prueba.printAttributes()
-	prueba.LookForADay("2017-04-05")
+	prueba.getAllDates()
+	print("Introduzca una fecha")
+	diaEnConcreto = raw_input()
+	prueba.LookForADay(diaEnConcreto)
 else:
 	print "Mala conexión a internet. Contacte con administrador"
