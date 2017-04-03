@@ -46,8 +46,7 @@ class ParseXml():
 		return enlace.firstChild.data
 				
 	#get all attributes from each day tag in XML file
-	def printAttributes(self):		
-		lista=[]	#list				
+	def printAttributes(self):				
 		for dia in etiquetaDia:					
 			#get attributes from each day tag (fecha,probabilidad prec, temp max, temp min)
 			date = dia.getAttribute("fecha")	
@@ -62,6 +61,25 @@ class ParseXml():
 				print("\nfecha: %s | prob general lluvia: %s | temp Max:%s | temp Min:%s" % (date, probPrecip.firstChild.data, tempMax.firstChild.data, tempMin.firstChild.data))				
 			except:
 				pass									
-		#return lista [:float(position)]	
+		
+	def LookForADay (self, day=''):
+		for dia in etiquetaDia:					
+			#get attributes from each day tag (fecha,probabilidad prec, temp max, temp min)
+			date = dia.getAttribute("fecha")	
+			probPrecip = dia.getElementsByTagName("prob_precipitacion")[0]
+			tempMax = dia.getElementsByTagName("maxima")[0]
+			tempMin = dia.getElementsByTagName("minima")[0]
+			try:				
+				fecha = date
+				probabilidad = probPrecip.firstChild.data
+				maxima = tempMax.firstChild.data
+				minima = tempMin.firstChild.data
+				if (fecha==day):
+					print("\nfecha: %s | prob general lluvia: %s | temp Max:%s | temp Min:%s" % (date, probPrecip.firstChild.data, tempMax.firstChild.data, tempMin.firstChild.data))
+				else:
+					print("naica")				
+				#print("\nfecha: %s | prob general lluvia: %s | temp Max:%s | temp Min:%s" % (date, probPrecip.firstChild.data, tempMax.firstChild.data, tempMin.firstChild.data))				
+			except:
+				pass
 #End class	
 			
